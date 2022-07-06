@@ -256,12 +256,12 @@ return [
         ['header' => 'account_settings'],
         [
             'text' => 'profile',
-            'url'  => 'admin/settings',
+            'url'  => 'admin/user/profile',
             'icon' => 'fas fa-fw fa-user',
         ],
         [
             'text' => 'change_password',
-            'url'  => 'admin/settings',
+            'url'  => 'admin/user/change_password',
             'icon' => 'fas fa-fw fa-lock',
         ],
         [
@@ -303,6 +303,11 @@ return [
             ],
         ],
         ['header' => 'labels'],
+        [
+            'text' => 'list users',
+            'url'  => 'admin/users',
+            'icon' => 'nav-icon fas fa-edit',
+        ],
         [
             'text'       => 'important',
             'icon_color' => 'red',
