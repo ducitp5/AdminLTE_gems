@@ -21,12 +21,12 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 Route::group(['prefix' => 'admin', 'middleware' => ['auth'] ], function(){
 
     Route::get('/', [HomeController::class , 'index'])->name('admin.home');
 
-    Route::get('/users', [UserController::class , 'index'])->name('admin.users');
+    Route::get('/', [HomeController::class , 'index'])->name('admin.flot');
 });
 
