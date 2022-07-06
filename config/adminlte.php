@@ -304,9 +304,19 @@ return [
         ],
         ['header' => 'labels'],
         [
-            'text' => 'list users',
-            'url'  => 'admin/users',
+            'text' => 'Users',
+
             'icon' => 'nav-icon fas fa-edit',
+            'submenu' => [
+                [
+                    'text' => 'level_one',
+                    'url'  => 'admin/users',
+                ],
+                [
+                    'text'    => 'level_one',
+                    'url'     => '#',
+                ],
+            ],
         ],
         [
             'text'       => 'important',
