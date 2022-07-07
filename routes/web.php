@@ -34,8 +34,12 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth'] ], function(){
 
     Route::get('/tables', [HomeController::class , 'tables'])->name('admin.tables');
 
-    Route::get('/users', [UserController::class , 'index'])->name('admin.flot');
-    Route::get('/users/create', [HomeController::class , 'create'])->name('admin.morris');
+    Route::get('/users', [UserController::class , 'index'])->name('admin.users');
+    Route::get('/users/create', [UserController::class , 'create'])->name('admin.create');
+    Route::post('/users/store', [UserController::class , 'store'])->name('admin.store');
+    Route::get('/users/edit/{id}', [UserController::class , 'edit'])->name('admin.edit');
+    Route::post('/users/update/{id}', [UserController::class , 'update'])->name('admin.update');
 
+    Route::get('/users/delete/{id}', [UserController::class , 'destroy'])->name('admin.edit');
 });
 

@@ -34,7 +34,7 @@
                         <a href="/admin/users">List Users</a>
                     </li>
                     <li>
-                        <a href="login.html">Create Users</a>
+                        <a href="/admin/users/create">Create Users</a>
                     </li>
                 </ul>
                 <!-- /.nav-second-level -->

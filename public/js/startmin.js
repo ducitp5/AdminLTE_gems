@@ -1,6 +1,11 @@
 $(function() {
 
-    $('#side-menu').metisMenu();
+    try{
+        $('#side-menu').metisMenu();
+    }
+    catch (e) {
+        console.warn(e);
+    }
 
 });
 
