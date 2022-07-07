@@ -19,7 +19,7 @@
                 <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Charts<span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
                     <li>
-                        <a href="{{ url('/admin/flot') }}">Flot Charts</a>
+                        <a href="/admin/flot">Flot Charts</a>
                     </li>
                     <li>
                         <a href="/admin/morris">Morris.js Charts</a>
