@@ -25,4 +25,15 @@ class HomeController extends Controller
     {
         return view('admin.index');
     }
+
+    public function flot()
+    {
+        return view('admin.pages.charts.flot-chart');
+    }
+
+    public function morris()
+    {
+        return view('admin.pages.charts.morris-chart');
+    }
+
 }

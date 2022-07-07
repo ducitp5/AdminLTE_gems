@@ -1,5 +1,5 @@
     <div class="navbar-header">
-        <a class="navbar-brand" href="index.html">Startmin</a>
+        <a class="navbar-brand" href="/">Startmin</a>
     </div>
 
     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -73,7 +73,7 @@
                 <i class="fa fa-user fa-fw"></i>  {{ auth()->user()->email }}  <b class="caret"></b>
             </a>
             <ul class="dropdown-menu dropdown-user">
-                <li><a href="#"><i class="fa fa-user fa-fw"></i> {{ Auth::user() }} -- User Profile</a>
+                <li><a href="#"><i class="fa fa-user fa-fw"></i> {{ Auth::user()->name }} s' Profile</a>
                 </li>
                 <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
                 </li>

@@ -29,6 +29,8 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth'] ], function(){
 
     Route::get('/', [HomeController::class , 'index'])->name('admin.home');
 
-    Route::get('/', [HomeController::class , 'index'])->name('admin.flot');
+    Route::get('/flot', [HomeController::class , 'flot'])->name('admin.flot');
+    Route::get('/morris', [HomeController::class , 'morris'])->name('admin.morris');
+
 });
 

@@ -2,9 +2,9 @@
 
 @section('content')
 
-
     <div id="page-wrapper">
         <div class="container-fluid">
+
             <div class="row">
                 <div class="col-lg-12">
                     <h1 class="page-header">Dashboard</h1>
@@ -106,6 +106,7 @@
                     </div>
                 </div>
             </div>
+
             <!-- /.row -->
             <div class="row">
                 <div class="col-lg-8">
@@ -396,6 +397,7 @@
                     <!-- /.panel -->
                 </div>
                 <!-- /.col-lg-8 -->
+
                 <div class="col-lg-4">
                     <div class="panel panel-default">
                         <div class="panel-heading">
@@ -529,10 +531,10 @@
                                     </div>
                                 </li>
                                 <li class="right clearfix">
-                                                <span class="chat-img pull-right">
-                                                    <img src="http://placehold.it/50/FA6F57/fff" alt="User Avatar"
-                                                         class="img-circle"/>
-                                                </span>
+                                    <span class="chat-img pull-right">
+                                        <img src="http://placehold.it/50/FA6F57/fff" alt="User Avatar"
+                                             class="img-circle"/>
+                                    </span>
 
                                     <div class="chat-body clearfix">
                                         <div class="header">
@@ -548,10 +550,10 @@
                                     </div>
                                 </li>
                                 <li class="left clearfix">
-                                                <span class="chat-img pull-left">
-                                                    <img src="http://placehold.it/50/55C1E7/fff" alt="User Avatar"
-                                                         class="img-circle"/>
-                                                </span>
+                                    <span class="chat-img pull-left">
+                                        <img src="http://placehold.it/50/55C1E7/fff" alt="User Avatar"
+                                             class="img-circle"/>
+                                    </span>
 
                                     <div class="chat-body clearfix">
                                         <div class="header">
@@ -593,10 +595,10 @@
                                 <input id="btn-input" type="text" class="form-control input-sm"
                                        placeholder="Type your message here..."/>
                                 <span class="input-group-btn">
-                                                <button class="btn btn-warning btn-sm" id="btn-chat">
-                                                    Send
-                                                </button>
-                                            </span>
+                                    <button class="btn btn-warning btn-sm" id="btn-chat">
+                                        Send
+                                    </button>
+                                </span>
                             </div>
                         </div>
                         <!-- /.panel-footer -->
@@ -610,4 +612,10 @@
         <!-- /.container-fluid -->
     </div>
     <!-- /#page-wrapper -->
+
+    <!-- Morris Charts JavaScript -->
+    <script src="/js/raphael.min.js"></script>
+    <script src="/js/morris.min.js"></script>
+    <script src="/js/morris-data.js"></script>
+
 @endsection
