@@ -36,4 +36,9 @@ class HomeController extends Controller
         return view('admin.pages.charts.morris-chart');
     }
 
+    public function tables()
+    {
+        return view('admin.pages.tables.table');
+    }
+
 }

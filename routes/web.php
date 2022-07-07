@@ -32,5 +32,6 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth'] ], function(){
     Route::get('/flot', [HomeController::class , 'flot'])->name('admin.flot');
     Route::get('/morris', [HomeController::class , 'morris'])->name('admin.morris');
 
+    Route::get('/tables', [HomeController::class , 'tables'])->name('admin.tables');
 });
 
