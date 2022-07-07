@@ -33,5 +33,9 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth'] ], function(){
     Route::get('/morris', [HomeController::class , 'morris'])->name('admin.morris');
 
     Route::get('/tables', [HomeController::class , 'tables'])->name('admin.tables');
+
+    Route::get('/users', [UserController::class , 'index'])->name('admin.flot');
+    Route::get('/users/create', [HomeController::class , 'create'])->name('admin.morris');
+
 });
 

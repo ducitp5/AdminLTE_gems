@@ -1,161 +1,117 @@
-@extends('adminlte::page')
 
-@section('title', __('pages.users.title_user'))
-
-@section('content_header')
-<h4 class="m-0 text-dark">{{ __('pages.users.title_user') }}</h4>
-@stop
-
-@section('content_breadcrumb')
-<ol class="breadcrumb float-sm-right">
-    <li class="breadcrumb-item">
-        <a href="">{{ __('pages.users.title_user') }}</a>
-    </li>
-</ol>
-@stop
+@extends('admin.layout.layout')
 
 @section('content')
 
-    <div class="content">
+    <div id="page-wrapper">
         <div class="container-fluid">
-            <div id="app-user">
-                <div class="row">
-                    <div class="col-12">
-                        <div class="card card-outline card-primary">
-                            <div class="card-header">
-                                <div class="row">
-                                    <div class="col-6"><h5 class="mb-1 mt-1">Danh sách nhân viên</h5></div>
-                                    <div class="col-6 text-right">
-                                        <button class="btn btn-sm btn-outline-success"><i class="fas fa-plus"></i>
-                                            Thêm nhân viên
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card-body">
-                                <div id="user-table_wrapper" class="dataTables_wrapper dt-bootstrap4 no-footer">
-                                    <div class="datatable-header--custom row">
-                                        <div class="col-md-12 text-left"></div>
-                                    </div>
-                                    <div>
-                                        <table id="user-table" class="table table-bordered dataTable no-footer"
-                                               role="grid" style="width: 100%;" width="100%" cellspacing="0">
-                                            <thead>
-                                                <tr role="row">
-                                                    <th class="align-middle sorting" tabindex="0" aria-controls="user-table"
-                                                        rowspan="1" colspan="1" style="width: 322px;"
-                                                        aria-label="Tên đăng nhập: Sắp xếp thứ tự tăng dần">ID
-                                                    </th>
-                                                    <th class="align-middle sorting" tabindex="0" aria-controls="user-table"
-                                                        rowspan="1" colspan="1" style="width: 322px;"
-                                                        aria-label="Email: Sắp xếp thứ tự tăng dần">Name
-                                                    </th>
-                                                    <th class="align-middle sorting" tabindex="0" aria-controls="user-table"
-                                                        rowspan="1" colspan="1" style="width: 302px;"
-                                                        aria-label="Tên đầy đủ: Sắp xếp thứ tự tăng dần">Email
-                                                    </th>
-                                                    <th class="align-middle sorting_disabled" rowspan="1" colspan="1"
-                                                        style="width: 336px;" aria-label="Chức vụ">Chức vụ
-                                                    </th>
-                                                    <th class="align-middle sorting_disabled" rowspan="1" colspan="1"
-                                                        style="width: 125px;" aria-label="Thao tác">Thao tác
-                                                    </th>
-                                                </tr>
-                                                <tr role="row">
-                                                    <th rowspan="1" colspan="1">
-                                                        <input type="text" class="form-control form-control-sm">
-                                                    </th>
-                                                    <th rowspan="1" colspan="1">
-                                                        <input type="text" class="form-control form-control-sm">
-                                                    </th>
-                                                    <th rowspan="1" colspan="1">
-                                                        <input type="text" class="form-control form-control-sm">
-                                                    </th>
 
-                                                    <th rowspan="1" colspan="1">
-                                                        <select class="form-control form-control-sm">
-                                                            <option value="" selected="selected">Tất cả</option>
-                                                            <option value="2b3602a0-e59b-4d80-82fa-84dbe2cbb8e5">
-                                                                super_admin
-                                                            </option>
-                                                        </select>
-                                                    </th>
-                                                    <th rowspan="1" colspan="1"></th>
-                                                </tr>
-                                            </thead>
-
-                                            <tbody>
-                                            @foreach($users as $user)
-                                                <tr role="row" class="odd">
-                                                    <td class=" align-middle">{{ $user->id }}</td>
-                                                    <td class=" align-middle">{{ $user->name }}</td>
-                                                    <td class=" align-middle">{{ $user->email }}</td>
-
-                                                    <td class=" align-middle"></td>
-                                                    <td class=" align-middle">
-                                                        <button class="btn btn-sm btn-outline-primary btn-edit"
-                                                                data-id="07beb2ef-a6a5-4263-983e-9fe62092c3be">
-                                                            <i class="fas fa-user-edit"></i>
-                                                        </button>
-                                                        <button class="btn btn-sm btn-outline-danger btn-delete"
-                                                                data-id="07beb2ef-a6a5-4263-983e-9fe62092c3be">
-                                                            <i class="fas fa-trash"></i>
-                                                        </button>
-                                                    </td>
-                                                </tr>
-
-                                            @endforeach
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-12 float-right">
-                                            <div class="dataTables_paginate paging_simple_numbers"
-                                                 id="user-table_paginate">
-                                                <ul class="pagination">
-                                                    <li class="paginate_button page-item previous disabled"
-                                                        id="user-table_previous"><a href="#" aria-controls="user-table"
-                                                                                    data-dt-idx="0" tabindex="0"
-                                                                                    class="page-link">Trước</a></li>
-                                                    <li class="paginate_button page-item active"><a href="#"
-                                                                                                    aria-controls="user-table"
-                                                                                                    data-dt-idx="1"
-                                                                                                    tabindex="0"
-                                                                                                    class="page-link">1</a>
-                                                    </li>
-                                                    <li class="paginate_button page-item "><a href="#"
-                                                                                              aria-controls="user-table"
-                                                                                              data-dt-idx="2"
-                                                                                              tabindex="0"
-                                                                                              class="page-link">2</a>
-                                                    </li>
-                                                    <li class="paginate_button page-item next" id="user-table_next"><a
-                                                            href="#" aria-controls="user-table" data-dt-idx="3"
-                                                            tabindex="0" class="page-link">Tiếp</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="page-header">Tables</h1>
                 </div>
             </div>
 
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            DataTables Advanced Tables
+                        </div>
+                        <!-- /.panel-heading -->
+                        <div class="panel-body">
+                            <div class="table-responsive">
+                                <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+                                    <thead>
+                                        <tr>
+                                            <th>ID</th>
+                                            <th>Email</th>
+                                            <th>Name</th>
+                                            <th>email_verified_at</th>
+                                            <th>Status</th>
+                                        </tr>
+                                    </thead>
+
+                                    <tbody>
+
+                                    @foreach($users as $user)
+                                        <tr class="gradeA">
+                                            <td>{{ $user->id }}</td>
+                                            <td>{{ $user->email }}</td>
+                                            <td>{{ $user->name }}</td>
+                                            <td class="center">{{ $user->email_verified_at }}</td>
+                                            <td class="center">{{ $user->id ? 'active' : 'disable' }}</td>
+                                        </tr>
+                                        <tr class="gradeA">
+                                            <td>Presto</td>
+                                            <td>Opera 7.0</td>
+                                            <td>Win 95+ / OSX.1+</td>
+                                            <td class="center">-</td>
+                                            <td class="center">A</td>
+                                        </tr>
+                                        <tr class="gradeA">
+                                            <td>Presto</td>
+                                            <td>Opera 7.5</td>
+                                            <td>Win 95+ / OSX.2+</td>
+                                            <td class="center">-</td>
+                                            <td class="center">A</td>
+                                        </tr>
+                                        <tr class="gradeA">
+                                            <td>Presto</td>
+                                            <td>Opera 8.0</td>
+                                            <td>Win 95+ / OSX.2+</td>
+                                            <td class="center">-</td>
+                                            <td class="center">A</td>
+                                        </tr>
+                                        <tr class="gradeA">
+                                            <td>Presto</td>
+                                            <td>Opera 8.5</td>
+                                            <td>Win 95+ / OSX.2+</td>
+                                            <td class="center">-</td>
+                                            <td class="center">A</td>
+                                        </tr>
+                                        <tr class="gradeA">
+                                            <td>Presto</td>
+                                            <td>Opera 9.0</td>
+                                            <td>Win 95+ / OSX.3+</td>
+                                            <td class="center">-</td>
+                                            <td class="center">A</td>
+                                        </tr>
+
+                                    @endforeach
+                                    </tbody>
+                                </table>
+                            </div>
+                            <!-- /.table-responsive -->
+                            <div class="well">
+                                <h4>DataTables Usage Information</h4>
+                                <p>DataTables is a very flexible, advanced tables plugin for jQuery. In SB Admin, we are using a specialized version of DataTables built for Bootstrap 3. We have also customized the table headings to use Font Awesome icons in place of images. For complete documentation on DataTables, visit their website at <a target="_blank" href="https://datatables.net/">https://datatables.net/</a>.</p>
+                                <a class="btn btn-default btn-lg btn-block" target="_blank" href="https://datatables.net/">View DataTables Documentation</a>
+                            </div>
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel -->
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+
         </div>
+
     </div>
 
-@stop
-@section('css')
-@stop
-@section('js')
-<script>
-    const message = `{!! session()->get('success') ?? null !!}`;
-    const SUPER_ADMIN_TEXT = `{{ __('app.super_admin') }}`
-    const EDIT_USER_BUTTON_TEXT = `{{ __('app.save_button_text') }}`
-    const CAN_EDIT_USER = true ;
-    const CAN_DELETE_USER = true ;
-</script>
-<script type="module" src="{{ asset('assets/admin/js/pages/user.js') }}"></script>
-@stop
+
+    <!-- DataTables JavaScript -->
+    <script src="/js/dataTables/jquery.dataTables.min.js"></script>
+    <script src="/js/dataTables/dataTables.bootstrap.min.js"></script>
+
+    <!-- Page-Level Demo Scripts - Tables - Use for reference -->
+    <script>
+        $(document).ready(function() {
+            $('#dataTables-example').DataTable({
+                responsive: true
+            });
+        });
+    </script>
+
+@endsection
